@@ -51,4 +51,4 @@ curl http://localhost:8000/mine
 curl http://localhost:8001/chain
 ```
 
-8. Create more transactions and mine more blocks!
+8. Create more transactions and mine more blocks.
