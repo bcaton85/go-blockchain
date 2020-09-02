@@ -1,4 +1,4 @@
-package main
+package blockchain
 
 import (
 	"crypto/sha256"
@@ -11,6 +11,7 @@ import (
 	"github.com/prometheus/common/log"
 )
 
+// NewBlockChain : Returns new instantiated Blockchain struct
 func NewBlockChain() *BlockChain {
 	blockChain := &BlockChain{}
 	blockChain.chain = make([]*Block, 0)
@@ -18,11 +19,12 @@ func NewBlockChain() *BlockChain {
 	blockChain.nodes = make([]string, 0)
 
 	seedHash := [32]byte{}
-	blockChain.newBlock("1", hex.EncodeToString(seedHash[:]))
+	blockChain.newBlock("1", hex.EncodeToString(seedHash[:])) // seed block
 
 	return blockChain
 }
 
+// BlockChain : The block chain object, containing the transactions, nodes, and chain
 type BlockChain struct {
 	chain               []*Block
 	currentTransactions []*Transaction

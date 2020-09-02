@@ -1,4 +1,4 @@
-package main
+package blockchain
 
 type ChainDTO struct {
 	Chain  []*Block
