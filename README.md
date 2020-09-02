@@ -10,9 +10,9 @@ This is a brief overview on how to get it running, to learn what it is actually 
 
 1. First build the binary `cd go-blockchain && go build`
 
-1. Open two terminals and start two nodes: `./go-blockchain 8000` `./go-blockchain 8001`
+2. Open two terminals and start two nodes: `./go-blockchain 8000` `./go-blockchain 8001`
 
-1. Register the nodes with each other by hitting the `/nodes/register` endpoint:
+3. Register the nodes with each other by hitting the `/nodes/register` endpoint:
 ```
 curl --location --request POST \
 'http://localhost:8000/nodes/register' \
@@ -24,7 +24,7 @@ curl --location --request POST \
 }'
 ```
 
-1. Add transactions to the network:
+4. Add transactions to the network:
 ```
 curl --location --request POST \
 'http://localhost:8000/transactions/new' \
@@ -36,19 +36,19 @@ curl --location --request POST \
 }'
 ```
 
-1. View the current chain before we mine a block:
+5. View the current chain before we mine a block:
 ```
 curl http://localhost:8000/chain
 ```
 
-1. Mine the block:
+5. Mine the block:
 ```
 curl http://localhost:8000/mine
 ```
 
-1. Find the newly replaced chain on the second node:
+7. Find the newly replaced chain on the second node:
 ```
 curl http://localhost:8001/chain
 ```
 
-1. Create more transactions and mine more blocks!
+8. Create more transactions and mine more blocks!
