@@ -6,7 +6,7 @@ A simulated Blockchain written in Go. Followed [this article](https://hackernoon
 
 ## Usage
 
-This is a brief overview on how to get it running, to learn what it is actually doing [read this blog post.](https://medium.com/@brandon.r.caton/creating-a-blockchain-network-in-go-6612a132b978)
+This is a brief overview on how to get it running, for more detail [read this blog post.](https://medium.com/@brandon.r.caton/creating-a-blockchain-network-in-go-6612a132b978)
 
 1. First build the binary `cd go-blockchain && go build`
 
