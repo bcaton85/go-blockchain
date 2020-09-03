@@ -6,11 +6,10 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"os/exec"
-	"strings"
 	"time"
 
 	"github.com/jinzhu/copier"
+	uuid "github.com/nu7hatch/gouuid"
 	"github.com/prometheus/common/log"
 )
 
@@ -178,10 +177,9 @@ func (a *api) resolveChain(w http.ResponseWriter, r *http.Request) {
 }
 
 func getUUID() string {
-	out, err := exec.Command("uuidgen").Output()
+	u, err := uuid.NewV4()
 	if err != nil {
-		log.Fatal(err)
+		log.Error("Unable to generate node uuid")
 	}
-	outputString := string(out)
-	return strings.TrimSuffix(outputString, "\n")
+	return u.String()
 }
